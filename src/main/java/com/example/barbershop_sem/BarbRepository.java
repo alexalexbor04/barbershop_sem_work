@@ -14,4 +14,10 @@ public interface BarbRepository extends JpaRepository<Barbershop, Integer> {
 
     @Query("SELECT DATE(date), COUNT(date) FROM Barbershop GROUP BY DATE(date) ORDER BY DATE(date)")
     List<Object[]> countByDayChart();
+
+    @Query("SELECT COUNT(id) FROM Barbershop")
+    int countId();
+
+    @Query("SELECT COUNT(DISTINCT DATE(date)) FROM Barbershop")
+    int countDates();
 }

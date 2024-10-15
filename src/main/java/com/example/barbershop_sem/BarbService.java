@@ -61,4 +61,14 @@ public class BarbService {
         ChartUtils.saveChartAsPNG(new File(path), chart, 800, 600);
         return "/images/bar_chart.png";
     }
+
+    public Integer averageClients() {
+        if (repo.count() > 0) {
+            int av = (int) Math.floor(repo.countId() / repo.countDates());
+            return av;
+        } else {
+            return -1;
+        }
+    }
+
 }

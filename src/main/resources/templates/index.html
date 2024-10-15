@@ -43,12 +43,12 @@
               value="Выбрать"
             />
           </form>
-          <!-- </div> -->
-          <h4 class="filter_name">Гистограмма:</h4>
+          <h4 class="chart">Гистограмма:</h4>
           <form th:action="@{/getChart}"></form>
           <a th:href="@{'/chart'}"
-            ><button type="button" class="btn btn-info">Посмотреть</button></a
-          >
+            ><button type="button" class="btn btn-info">Посмотреть</button></a>
+          <h4 class="average">Среднее количество клиентов в день:</h4>
+          <p th:text="${average}"></p>
         </div>
       </div>
       <table id="1" class="table table-striped table-hover">

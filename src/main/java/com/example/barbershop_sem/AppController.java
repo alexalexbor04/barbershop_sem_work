@@ -24,6 +24,12 @@ public class AppController {
         List<Barbershop> listClients = service.listAll(keyword);
         model.addAttribute("listClients", listClients);
         model.addAttribute("keyword", keyword);
+        Integer average = service.averageClients();
+        if (average == -1) {
+            model.addAttribute("average", 0);
+        } else {
+            model.addAttribute("average", average);
+        }
         return "index";
     }
 
@@ -74,7 +80,6 @@ public class AppController {
 
         return "chart";
     }
-
 }
 
 
