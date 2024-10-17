@@ -42,6 +42,13 @@
               class="btn btn-success btn-sm"
               value="Выбрать"
             />
+            <input
+                    type="button"
+                    class="btn btn-warning btn-sm"
+                    value="Очистить"
+                    id="clear"
+                    onclick="clearSearch()"
+            />
           </form>
           <h4 class="chart">Гистограмма:</h4>
           <form th:action="@{/getChart}"></form>
